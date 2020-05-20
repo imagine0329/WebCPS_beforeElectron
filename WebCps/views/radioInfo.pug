@@ -1,0 +1,20 @@
+﻿extends layouts/main
+
+block content
+	.radioInfo_wrapper
+		.grid
+			.grid_item
+				p Model 
+			.grid_value
+				p#model none
+			.grid_item
+				p Serial Number
+			.grid_value
+				p#serialNumber none
+			.grid_item
+				p FW Version
+			.grid_value
+				p#fwVersion none
+			
+		script(type = "module", src='/javascripts/client.js')
+		

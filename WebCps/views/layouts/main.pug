@@ -1,0 +1,18 @@
+﻿doctype html
+html
+	head
+		link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css")
+		link(rel="shortcut icon" href ="/images/favicon.ico")
+		link(rel="icon" href="favicon.ico")
+		title #{siteName} | #{title} 
+		link(rel='stylesheet', href='/static/styles.css')
+		meta(charset='utf-8')
+	body
+		header
+			include ../partials/header
+		side
+			include ../partials/side
+		main
+			block content
+		include ../partials/footer
+		script(src="/static/main.js")

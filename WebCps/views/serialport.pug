@@ -1,0 +1,12 @@
+﻿extends layouts/main
+
+block content
+	.serial_wrapper
+		input(id="writeData" type="number" palceholder="input data...")
+		button(id="writeBtnTest" type="button" onclick="true")
+			span
+				i.far.fa-paper-plane
+			|  Write
+		div#network
+		
+		script(type = "module", src='/javascripts/client.js')

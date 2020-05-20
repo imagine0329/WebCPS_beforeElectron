@@ -1,0 +1,72 @@
+{
+  "name": "web-cps",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon --exec babel-node app.js --delay 2 --ignore 'scss' ",
+    "build": "webpack --mode production",
+		"dev:build": "webpack --mode development -w",
+		"dev:pkg": "pkg ."
+  },
+  "description": "Web Cps",
+  "author": {
+    "name": ""
+  },
+  "bin": {
+    "app": "./app.js"
+  },
+  "pkg": {
+    "scripts": "./app.js",
+    "assets": "views/**/*",
+    "targets": [
+      "node13"
+    ]
+  },
+  "assets": [
+    "assets/**/*",
+    "images/**/*"
+  ],
+  "dependencies": {
+    "@serialport/list": "^8.0.7",
+    "@serialport/parser-readline": "^8.0.6",
+    "autoprefixer": "^9.7.4",
+    "babel-loader": "^8.0.6",
+    "body-parser": "^1.15.0",
+    "cookie-parser": "^1.4.0",
+    "cross-env": "^7.0.0",
+    "debug": "^2.2.0",
+    "eslint-config-prettier": "^6.10.0",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "node-sass": "^4.13.1",
+    "postcss-loader": "^3.0.0",
+    "prettier": "^1.19.1",
+    "pug": "^2.0.0-beta6",
+    "sass-loader": "^8.0.2",
+    "serve-favicon": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/polyfill": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "buffer": "^5.4.3",
+    "css-loader": "^3.4.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^5.0.2",
+    "filereader": "^0.10.3",
+    "nodemon": "^2.0.2",
+    "pkg": "^4.4.4",
+    "serialport": "^8.0.7",
+    "style-loader": "^1.1.3",
+    "wait-until": "0.0.2",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-node-externals": "^1.7.2",
+    "websocket": "^1.0.31",
+    "ws": "^7.2.1"
+  }
+}

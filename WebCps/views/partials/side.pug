@@ -1,0 +1,39 @@
+﻿side.side
+	.side_wrapper   
+		.side_row
+			p#versionTitle Version
+			p#version D01.00.01
+		.side_row
+			select(id="select_comport")
+				option(value="Select COM Port") Select COM Port
+			button(id="btn_refreshComport" type="button" onclick="true")
+				span
+					i.fas.fa-sync-alt
+		.side_row
+			button(id="btn_read" type="button" onclick="true")
+				span
+					i.far.fa-arrow-alt-circle-down
+				|  Read
+			button(id="btn_write" type="button" onclick="true")
+				span
+					i.far.fa-paper-plane
+				|  Write
+		.side_row
+			p Model
+			select(id="select_model")
+				option(value="Select Model") Select Model
+				option(value="FTH & CL") FTH & CL
+				option(value="MTR & FTR") MTR & FTR
+				option(value="CLR") CLR
+		.side_row
+			p Option #2
+			select
+				option(value="Option #2") Select Option
+		.side_row
+			p Option #3
+			select
+				option(value="Option #3") Select Option
+		.side_row
+			p Option #4
+			select
+				option(value="Option #4") Select Option

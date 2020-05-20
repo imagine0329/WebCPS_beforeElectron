@@ -1,0 +1,17 @@
+﻿extends layouts/main
+
+block content
+    .serial-port
+        input(id="writeData" type="number" palceholder="input data...")
+        button(id="writeBtn" type="button" onclick="true")
+            span
+                i.far.fa-paper-plane
+            |  Write
+  
+        p#state test
+        
+        h1 Read
+        div#network
+        script(type = "module", src='/javascripts/client.js')    
+            
+            

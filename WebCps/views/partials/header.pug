@@ -1,0 +1,25 @@
+﻿header.header
+    div.header_title    Customer Programming Software
+    .header_wrapper   
+        .header_column
+            a(href=routes.home)
+                img(src="/images/black.png" height="60")
+        .header_column
+            form(action="/page3", method="get")
+                input(type="text", placeholder="Search by term...", name="term")
+                button(type="button" onclick="true")
+                    i.fas.fa-search
+        .header_column
+            ul
+                li
+                    a#home(href=routes.home) Home
+                li
+                    a#serial-port(href=routes.serialPort) Serial Port
+                li
+                    a#radio-info(href=routes.radioInfo) Radio Info.
+                li
+                    a#page_4(href="/page_4") Page #4
+                li
+                    a#page5(href=routes.serialPort) Page #5
+		
+script(type = "module", src='/javascripts/header.js')

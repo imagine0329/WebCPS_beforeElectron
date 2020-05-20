@@ -1,0 +1,52 @@
+﻿extends layouts/main
+
+block content
+	.page4_wrapper
+		.grid
+			.grid_item
+				p Range Check
+			.grid_value
+				input(id="check_rangeCheck" type="checkbox" name="Test" value="Test")
+			.grid_item
+				p Scan
+			.grid_value
+				input(id="check_scan" type="checkbox" name="Test" value="Test")
+			.grid_item
+				p item #3
+			.grid_value
+				select(id="selectMode")
+					option(value="Select Mode") Select...
+					option(value="Option1") Option #1
+					option(value="Option2") Option #2
+			.grid_item
+				p item #4
+			.grid_value
+				select(id="selectMode")
+					option(value="Select Mode") Select...
+					option(value="Option1") Option #1
+					option(value="Option2") Option #2
+			.grid_item
+				p item #5
+			.grid_value
+				select(id="selectMode")
+					option(value="Select Mode") Select...
+					option(value="Option1") Option #1
+					option(value="Option2") Option #2
+				button(id="changeMode" type="button" onclick="true")
+					span
+						i.fas.fa-sync-alt
+			.grid_item
+				p item #6
+			.grid_value
+				input(id="selectMode" type="checkbox" name="Test" value="Test" checked="true")
+			.grid_item
+				p item #7
+			.grid_value
+				input(id="selectMode" type="checkbox" name="Test" value="Test" checked="true")
+			.grid_item
+				p item #8
+			.grid_value
+				input(id="selectMode" type="checkbox" name="Test" value="Test" )
+
+		script(type = "module", src='/javascripts/client.js')
+		
