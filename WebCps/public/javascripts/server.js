@@ -36,7 +36,6 @@ event.on('writePort', () => {
 	writeDataToComport();
 });
 
-
 event.on('nextWritePort', () => {
 	console.log('--------------------------------------EVENT: nextWritePort');
 	cnt++;
@@ -45,7 +44,6 @@ event.on('nextWritePort', () => {
 		event.emit('stopWritePort');
 	else
 		event.emit('writePort');
-	
 });
 
 event.on('retryWritePort', () => {
@@ -58,7 +56,6 @@ event.on('retryWritePort', () => {
 		event.emit('writePort');
 });
 
-
 event.on('stopWritePort', () => {
 	console.log('--------------------------------------EVENT: stopWritePort');
 	isFinished = true;
@@ -67,7 +64,7 @@ event.on('stopWritePort', () => {
 	console.log(mode);
 	if(mode == protocol.readMode)
 		sendDataToClient();
-
+	
 	mode = null;
 });
 
@@ -86,9 +83,8 @@ event.on('wait', () => {
 			}
 		}
 	}, 1000);
+	
 });
-
-
 
 
 module.exports = (server) => {
@@ -98,7 +94,6 @@ module.exports = (server) => {
 		socket = websocket;
 		findSerialPort(websocket);
 		
-
         const ip = req.headers['x-forwared-for'] || req.connection.remoteAddress;
         console.log('-------------connected  ' + ip);
 
@@ -131,7 +126,7 @@ module.exports = (server) => {
 					break;
 			}
 		});
-		
+
         websocket.on('error', (error) => {
             console.log(error);
 		});
@@ -174,12 +169,12 @@ const openSerialPort = () => {
 		port.on('data', function (data) {
 			analyzeReceivedData(data.toString('hex'));
 		});
-	
+
 		port.on('close', () => {
 			console.log('Success close port');
 			port = null;
 		});
-		
+
 		port.open((err) => {
 			console.log('port.open()');
 			if (err) {
@@ -365,7 +360,7 @@ const checkChecksum = (buffer) => {
 		checksum += buffer[i + 1];
 	}
 
-	console.log('CHECKSUM : ' + checksum + ' & buffer[checksum] = ' + buffer[len + 1]);
+//	console.log('CHECKSUM : ' + checksum + ' & buffer[checksum] = ' + buffer[len + 1]);
 
 	if (buffer[len + 1] == checksum)
 		return true;
@@ -373,14 +368,6 @@ const checkChecksum = (buffer) => {
 		return false;
 }
 
-
-const wait = (ms) => {
-	return new Promise((resolve, reject) => {
-		 setTimeout(() => {
-			resolve();
-		}, ms)
-	});
-}
 
 const sendMsgToClient = (type, data) => {
 	var msg = {

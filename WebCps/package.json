@@ -5,26 +5,24 @@
   "scripts": {
     "start": "nodemon --exec babel-node app.js --delay 2 --ignore 'scss' ",
     "build": "webpack --mode production",
-		"dev:build": "webpack --mode development -w",
-		"dev:pkg": "pkg ."
+    "dev:build": "webpack --mode development -w"
   },
   "description": "Web Cps",
   "author": {
     "name": ""
   },
   "bin": {
-    "app": "./app.js"
+    "app": "./public/static/main.js"
   },
   "pkg": {
-    "scripts": "./app.js",
-    "assets": "views/**/*",
+    "assets": "./views/**/*",
     "targets": [
-      "node13"
+      "node10"
     ]
   },
   "assets": [
-    "assets/**/*",
-    "images/**/*"
+    "./public/static/**/*",
+    "./public/images/**/*"
   ],
   "dependencies": {
     "@serialport/list": "^8.0.7",

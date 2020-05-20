@@ -1,4 +1,6 @@
 ﻿'use strict';
+process.env.UV_THREADPOOL_SIZE = 128;
+
 var debug = require('debug');
 var express = require('express');
 var path = require('path');
@@ -47,8 +49,8 @@ if (app.get('env') === 'development') {
         res.render('error', {
             message: err.message,
             error: err
-        });
-    });
+		});
+	});
 }
 
 // production error handler
@@ -64,7 +66,10 @@ app.use(function (err, req, res, next) {
 const PORT = process.env.PORT || 4000;
 
 const handleListening = () => {
-    console.log(`Listening on: http://localhost:${PORT}`);
+	console.log(`Listening on: http://localhost:${PORT}`);
+	setTimeout(() => {
+		console.log('timeout')
+    }, 5000);
 };
 
 var server = app.listen(PORT, handleListening);
